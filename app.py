@@ -9,7 +9,7 @@ from flask_migrate import Migrate
 from enum import Enum
 from flask import abort
 from functools import wraps
-from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, curren
+from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 import google.generativeai as genai
 from flask import Flask, request, jsonify
 from flask_cors import CORS
@@ -18,10 +18,6 @@ import os
 app = Flask(__name__)  
 CORS(app)  # Enable CORS for all routes
 load_dotenv()  # Load environment variables from .env file
-
-app.secret_key = 'your_secret_key_h"
-import uuid
-
 
 app = Flask(__name__)  
 app.secret_key = os.getenv("SECRET_KEY", "dev_key")
